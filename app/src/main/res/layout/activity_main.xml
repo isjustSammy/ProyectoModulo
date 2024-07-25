@@ -8,12 +8,68 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginStart="26dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/raleway_extrabold_italic"
+        android:text="Nombre"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtNombreInicio"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/raleway_extrabold_italic"
+        android:text="Contraseña"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtContrasenaInicio"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtNombreInicio" />
+
+    <EditText
+        android:id="@+id/txtContrasenaInicio"
+        android:layout_width="373dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/txtfondo"
+        android:ems="10"
+        android:fontFamily="@font/raleway_semibold_italic"
+        android:inputType="textPassword"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
+    <EditText
+        android:id="@+id/txtNombreInicio"
+        android:layout_width="373dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/txtfondo"
+        android:ems="10"
+        android:fontFamily="@font/raleway_semibold_italic"
+        android:inputType="textEmailAddress"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <Button
+        android:id="@+id/btnIniciarSesion"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/raleway_semibold_italic"
+        android:text="iniciar sesion"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtContrasenaInicio" />
 </androidx.constraintlayout.widget.ConstraintLayout>

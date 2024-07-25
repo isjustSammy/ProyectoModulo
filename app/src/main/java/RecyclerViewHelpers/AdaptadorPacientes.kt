@@ -147,4 +147,10 @@ class AdaptadorPacientes(var Datos: List<DataClassPacientes>): RecyclerView.Adap
             }
         }
     }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPacientes {
+        val vista = LayoutInflater.from(parent.context).inflate(R.layout., parent, false)
+        return ViewHolderPacientes(vista)
+    }
+
 }
+
