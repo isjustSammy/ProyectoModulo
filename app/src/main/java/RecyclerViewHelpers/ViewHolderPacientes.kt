@@ -8,5 +8,9 @@ import oscar.rauda.kevin.alvarado.proyectomodulo.R
 
 class ViewHolderPacientes(view: View):RecyclerView.ViewHolder(view) {
 
+    val txtPacienteNombre = view.findViewById<TextView>(R.id.txtPacienteNombre)
+    val txtPacienteApellido = view.findViewById<TextView>(R.id.txtPacienteApellido)
+    val btnBorrar = view.findViewById<ImageView>(R.id.btnBorrar)
+    val btnEditar = view.findViewById<ImageView>(R.id.btnEditar)
 
 }

@@ -24,27 +24,28 @@ class AdaptadorPacientes(var Datos: List<DataClassPacientes>): RecyclerView.Adap
 
     fun refrestPantalla(
         id_paciente: Int,
-        Nuevo_Nombres_paciente: String,
-        Nuevo_apellidos_paciente: String,
-        Nuevo_edad_paciente: Int,
-        Nuevo_enfermedad_paciente: String,
-        Nuevo_num_habitacion: Int,
-        Nuevo_num_cama: Int,
-        Nuevo_medicamentos: String,
-        Nuevo_fecha_ingreso: String,
-        Nuevo_hora_aplicacion: String
+        N_NombresP: String,
+        N_apellidosP: String,
+        N_edadP: Int,
+        N_enfermedadP: String,
+        N_habitacion: Int,
+        N_cama: Int,
+        N_medicamento: String,
+        N_ingreso: String,
+        N_hora_aplicacion: String
     ) {
+
         val index = Datos.indexOfFirst { it.id_paciente == id_paciente }
         if (index != -1) {
-            Datos[index].nombres_paciente = Nuevo_Nombres_paciente
-            Datos[index].apellidos_paciente = Nuevo_apellidos_paciente
-            Datos[index].edad_paciente = Nuevo_edad_paciente
-            Datos[index].enfermedad_paciente = Nuevo_enfermedad_paciente
-            Datos[index].num_habitacion = Nuevo_num_habitacion
-            Datos[index].num_cama = Nuevo_num_cama
-            Datos[index].medicamento = Nuevo_medicamentos
-            Datos[index].fecha_ingreso = Nuevo_fecha_ingreso
-            Datos[index].hora_aplicacion = Nuevo_hora_aplicacion
+            Datos[index].nombres_p = N_NombresP
+            Datos[index].apellidos_p = N_apellidosP
+            Datos[index].edad_p = N_edadP
+            Datos[index].enfermedad_p = N_enfermedadP
+            Datos[index].habitacion = N_habitacion
+            Datos[index].cama = N_cama
+            Datos[index].medicamento = N_medicamento
+            Datos[index].ingreso = N_ingreso
+            Datos[index].hora_aplicacion = N_hora_aplicacion
             notifyItemChanged(index)
         }
     }
@@ -86,15 +87,15 @@ class AdaptadorPacientes(var Datos: List<DataClassPacientes>): RecyclerView.Adap
 
             fun refrestData(
                 context: Context,
-                NuevoNombres_paciente: String,
-                Nuevoapellidos_paciente: String,
-                Nuevoedad_paciente: Int,
-                Nuevoenfermedad_paciente: String,
-                Nuevonum_habitacion: Int,
-                Nuevonum_cama: Int,
-                Nuevomedicamentos: String,
-                Nuevofecha_ingreso: String,
-                Nuevohora_aplicacion: String,
+                Nnombres_paciente: String,
+                Napellidos_paciente: String,
+                Nedad_paciente: Int,
+                Nenfermedad_paciente: String,
+                Nnum_habitacion: Int,
+                Nnum_cama: Int,
+                Nmedicamentos: String,
+                Nfecha_ingreso: String,
+                Nhora_aplicacion: String,
                 id_paciente: Int
             ) {
                 GlobalScope.launch(Dispatchers.IO) {
@@ -102,31 +103,31 @@ class AdaptadorPacientes(var Datos: List<DataClassPacientes>): RecyclerView.Adap
                     if (objConexion != null) {
                         try {
                             val actualizarPaciente =
-                                objConexion.prepareStatement("update Pacientes set nombres =?, apellidos = ?, edad = ?, enfermedad = ?, num_habitacion = ?, num_cama = ?, medicamentos = ?, fecha_ingreso = ?, hora_aplicacion = ? where id_paciente = ?")!!
-                            actualizarPaciente.setString(1, NuevoNombres_paciente)
-                            actualizarPaciente.setString(2, Nuevoapellidos_paciente)
-                            actualizarPaciente.setInt(3, Nuevoedad_paciente)
-                            actualizarPaciente.setString(4, Nuevoenfermedad_paciente)
-                            actualizarPaciente.setInt(5, Nuevonum_habitacion)
-                            actualizarPaciente.setInt(6, Nuevonum_cama)
-                            actualizarPaciente.setString(7, Nuevomedicamentos)
-                            actualizarPaciente.setString(8, Nuevofecha_ingreso)
-                            actualizarPaciente.setString(9, Nuevohora_aplicacion)
+                                objConexion.prepareStatement("update Paciente set nombres =?, apellidos = ?, edad = ?, enfermedad = ?, habitacion = ?, cama = ?, medicamento = ?, ingreso = ?, hora_aplicacion = ? where id_paciente = ?")!!
+                            actualizarPaciente.setString(1, Nnombres_paciente)
+                            actualizarPaciente.setString(2, Napellidos_paciente)
+                            actualizarPaciente.setInt(3, Nedad_paciente)
+                            actualizarPaciente.setString(4, Nenfermedad_paciente)
+                            actualizarPaciente.setInt(5, Nnum_habitacion)
+                            actualizarPaciente.setInt(6, Nnum_cama)
+                            actualizarPaciente.setString(7, Nmedicamentos)
+                            actualizarPaciente.setString(8, Nfecha_ingreso)
+                            actualizarPaciente.setString(9, Nhora_aplicacion)
                             actualizarPaciente.setInt(10, id_paciente)
                             actualizarPaciente.executeUpdate()
 
                             withContext(Dispatchers.Main) {
                                 refrestPantalla(
                                     id_paciente,
-                                    NuevoNombres_paciente,
-                                    Nuevoapellidos_paciente,
-                                    Nuevoedad_paciente,
-                                    Nuevoenfermedad_paciente,
-                                    Nuevonum_habitacion,
-                                    Nuevonum_cama,
-                                    Nuevomedicamentos,
-                                    Nuevofecha_ingreso,
-                                    Nuevohora_aplicacion
+                                    Nnombres_paciente,
+                                    Napellidos_paciente,
+                                    Nedad_paciente,
+                                    Nenfermedad_paciente,
+                                    Nnum_habitacion,
+                                    Nnum_cama,
+                                    Nmedicamentos,
+                                    Nfecha_ingreso,
+                                    Nhora_aplicacion
                                 )
                                 Toast.makeText(
                                     context,
@@ -137,7 +138,7 @@ class AdaptadorPacientes(var Datos: List<DataClassPacientes>): RecyclerView.Adap
                             }
                         } catch (e: Exception) {
                             withContext(Dispatchers.Main) {
-                                Toast.makeText(context, "Revisa bien eso", Toast.LENGTH_SHORT)
+                                Toast.makeText(context, "Revise los datos", Toast.LENGTH_SHORT)
                                     .show()
                             }
                         }
@@ -148,8 +149,37 @@ class AdaptadorPacientes(var Datos: List<DataClassPacientes>): RecyclerView.Adap
         }
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolderPacientes {
-        val vista = LayoutInflater.from(parent.context).inflate(R.layout., parent, false)
+        val vista = LayoutInflater.from(parent.context).inflate(R.layout.carta_p , parent, false)
         return ViewHolderPacientes(vista)
+    }
+
+    override fun getItemCount() = Datos.size
+
+    override fun onBindViewHolder(holder: ViewHolderPacientes, position: Int) {
+        val item = Datos[position]
+        holder.txtPacienteNombre.text = item.nombres_p
+        holder.txtPacienteApellido.text = item.apellidos_p
+
+        holder.btnBorrar.setOnClickListener {
+            val context = holder.itemView.context
+
+            val builder = androidx.appcompat.app.AlertDialog.Builder(context)
+            builder.setTitle("Borrar")
+            builder.setMessage("Estás seguro de borrar este paciente?")
+
+            builder.setPositiveButton("Si") { dialog, which ->
+                BorrarData(context, item.id_paciente, position)
+            }
+
+            builder.setNeutralButton("No") { dialog, which ->
+                dialog.dismiss()
+            }
+
+            val dialog = builder.create()
+            dialog.show()
+
+        }
+
     }
 
 }

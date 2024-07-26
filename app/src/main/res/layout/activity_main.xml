@@ -7,69 +7,340 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="@font/raleway_extrabold_italic"
-        android:text="Nombre"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtNombreInicio"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="5dp"
-        android:fontFamily="@font/raleway_extrabold_italic"
-        android:text="Contraseña"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/txtContrasenaInicio"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNombreInicio" />
-
-    <EditText
-        android:id="@+id/txtContrasenaInicio"
-        android:layout_width="373dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/txtfondo"
-        android:ems="10"
-        android:fontFamily="@font/raleway_semibold_italic"
-        android:inputType="textPassword"
-        android:textSize="20sp"
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="412dp"
+        android:layout_height="620dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-    <EditText
-        android:id="@+id/txtNombreInicio"
-        android:layout_width="373dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="5dp"
-        android:background="@drawable/txtfondo"
-        android:ems="10"
-        android:fontFamily="@font/raleway_semibold_italic"
-        android:inputType="textEmailAddress"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    <Button
-        android:id="@+id/btnIniciarSesion"
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="80dp"
+                android:fontFamily="@font/raleway_extrabold_italic"
+                android:text="Nombres"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/raleway_extrabold_italic"
+                android:text="Apellidos"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtApellidosP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtNombreP" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="28dp"
+                android:fontFamily="@font/raleway_extrabold_italic"
+                android:text="Edad"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtEdadP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtApellidosP" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/raleway_extrabold_italic"
+                android:text="Enfermedad"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtEnfermedadP"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEdadP" />
+
+            <EditText
+                android:id="@+id/txtApellidosP"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/txtfondo"
+                android:ems="10"
+                android:fontFamily="@font/raleway_semibold_italic"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+            <TextView
+                android:id="@+id/textView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/raleway_extrabold_italic"
+                android:text="Fecha de ingreso"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtMedicamento" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/raleway_extrabold_italic"
+                android:text="Hora de aplicacion "
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtIngreso" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/raleway_extrabold_italic"
+                android:text="Medicamentos asignados"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtMedicamento"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtCama" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/raleway_extrabold_italic"
+                android:text="Numero de habitación"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtHabitacion"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtEnfermedadP" />
+
+            <EditText
+                android:id="@+id/txtHabitacion"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/txtfondo"
+                android:ems="10"
+                android:fontFamily="@font/raleway_semibold_italic"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+            <EditText
+                android:id="@+id/txtEnfermedadP"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/txtfondo"
+                android:ems="10"
+                android:fontFamily="@font/raleway_semibold_italic"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+            <EditText
+                android:id="@+id/txtNombreP"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/txtfondo"
+                android:ems="10"
+                android:fontFamily="@font/raleway_semibold_italic"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+            <EditText
+                android:id="@+id/txtEdadP"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/txtfondo"
+                android:ems="10"
+                android:fontFamily="@font/raleway_semibold_italic"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="5dp"
+                android:fontFamily="@font/raleway_extrabold_italic"
+                android:text="Numero de cama"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/txtCama"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtHabitacion" />
+
+            <EditText
+                android:id="@+id/txtCama"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/txtfondo"
+                android:ems="10"
+                android:fontFamily="@font/raleway_semibold_italic"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+            <EditText
+                android:id="@+id/txtMedicamento"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/txtfondo"
+                android:ems="10"
+                android:fontFamily="@font/raleway_semibold_italic"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+            <EditText
+                android:id="@+id/txtIngreso"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/txtfondo"
+                android:clickable="false"
+                android:ems="10"
+                android:focusable="false"
+                android:fontFamily="@font/raleway_semibold_italic"
+                android:gravity="start|top"
+                android:inputType="date"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+            <Button
+                android:id="@+id/btnAgregarPacientes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="30dp"
+                android:backgroundTint="#8BC34A"
+                android:text="Agregar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtHoraAplicacion" />
+
+            <EditText
+                android:id="@+id/txtHoraAplicacion"
+                android:layout_width="370dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/txtfondo"
+                android:ems="10"
+                android:fontFamily="@font/raleway_semibold_italic"
+                android:inputType="text"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+            <Button
+                android:id="@+id/btnAgregarP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:backgroundTint="#4CAF50"
+                android:text="Agregar pacientes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/btnListaP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="20dp"
+                android:backgroundTint="#9E9E9E"
+                android:text="Lista de pacientes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="60dp"
-        android:fontFamily="@font/raleway_semibold_italic"
-        android:text="iniciar sesion"
-        android:textSize="24sp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="50dp"
+        android:background="@drawable/fondo_menu"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_extrabold_italic"
+            android:text="Ingreso de pacientes"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:background="#8BC34A"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtContrasenaInicio" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_logo_bloom" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
