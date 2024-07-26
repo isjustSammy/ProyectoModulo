@@ -15,6 +15,9 @@
         android:theme="@style/Theme.ProyectoModulo"
         tools:targetApi="31">
         <activity
+            android:name=".detalle_p"
+            android:exported="false" />
+        <activity
             android:name=".lista_p"
             android:exported="false" />
         <activity
@@ -31,8 +34,8 @@
             android:exported="true" />
 
         <meta-data
-        android:name="preloaded_fonts"
-        android:resource="@array/preloaded_fonts" />
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>
